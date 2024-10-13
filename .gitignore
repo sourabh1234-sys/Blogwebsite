@@ -1,0 +1,2 @@
+MONGO_URL=mongodb+srv://officialsourabhchoudhary:sourabh5566@cluster0.itust.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0
+PORT = 8005
