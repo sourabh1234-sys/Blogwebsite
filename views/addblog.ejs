@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header') %>
+    <title>ADD NEW BLOG</title>
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            height: 100vh; /* Full viewport height */
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto; /* Center horizontally */
+            background-color: #fff; /* White background for the form */
+            color: #000; /* Black text for form */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff; /* White text for heading */
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100%;">
+        <!-- Form centered vertically and horizontally -->
+        <div class="form-container">
+            <h1>Add New Blog</h1>
+            
+            <!-- Form to add a new blog -->
+            <form action="/blog" method="POST" enctype="multipart/form-data">
+                <!-- Blog Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Blog Title</label>
+                    <input type="text" class="form-control"  name="title" placeholder="Enter blog title" required>
+                </div>
+
+                <!-- Blog Body -->
+                <div class="mb-3">
+                    <label for="body" class="form-label">Blog Content</label>
+                    <textarea class="form-control" id="body" name="body" rows="6" placeholder="Write your blog content here..." required></textarea>
+                </div>
+
+                <!-- Cover Photo -->
+                <div class="mb-3">
+                    <label for="coverphoto" class="form-label">Cover Photo</label>
+                    <input type="file" class="form-control" id="coverphoto" name="coverphoto" accept="image/*">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-dark w-100">Submit Blog</button>
+            </form>
+        </div>
+    </div>
+   <%- include('./partials/scripts') %>
+</body>
+</html>

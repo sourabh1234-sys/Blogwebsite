@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header') %>
+    <title>Home Page</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+   <!-- <%= JSON.stringify(blogs)  %> -->
+   <div class="container mt-5">
+    <h1 class="text-center mb-5">All Blogs</h1>
+
+    <div class="row">
+        <% blogs.forEach(function(blog) { %>
+            <div class="col-md-4 mb-4">
+               
+                <div class="card h-100">
+                    <!-- Optional cover photo -->
+                    <% if (blog.coverphoto) { %>
+                        <img src="<%= blog.coverphoto %>" class="card-img-top" alt="Blog Cover">
+                    <% } %>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= blog.title %></h5>
+                        <p class="card-text">
+                            <%= blog.body %>
+                        </p>
+                        <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read More</a>
+                    </div>
+                    
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+   <%- include('./partials/scripts') %>
+</body>
+</html>
