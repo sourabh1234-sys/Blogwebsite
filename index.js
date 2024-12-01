@@ -10,7 +10,7 @@ const { checkauthenticationcookie } = require('./middleware/authentication');
 const Blog = require('./model/blog');
 
 const app = express();
-const PORT = process.env.PORT || 8005; // Default to 8005 if PORT is not set
+const PORT = process.env.PORT || 3000; // Default to 8005 if PORT is not set
 
 // Debugging line to check the MONGO_URL
 console.log("MONGO_URL:", process.env.MONGO_URL); // Add this line
